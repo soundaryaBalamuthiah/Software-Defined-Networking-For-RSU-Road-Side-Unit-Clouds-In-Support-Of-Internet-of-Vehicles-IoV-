@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN" "http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="false" />
+	<constant name="struts.custom.i18n.resources" value="applicationresources" />
+	<package name="default" extends="struts-default">
+
+		<action name="registration" class="com.registration">
+			<result name="success">index.jsp</result>
+			<result name="input">register.jsp</result>
+		</action>
+		
+		<action name="login" class="com.login">
+			<result name="success" type="redirect">welcome.jsp</result>
+			<result name="error">myaccount.jsp</result>
+		</action>
+		<action name="pairing" class="com.andriodpairin"/>
+		
+		<action name="signout" class="com.login" method="Signout">
+			<result name="SUCCESS">index.jsp</result>
+		</action>
+		<action name="loginn" class="com.android.Login" method="login">	
+		</action>
+		<action name="service" class="com.android.Service" method="service">	
+		</action>
+		<action name="pathreq" class="com.android.Path" method="path">	
+		</action>
+		<action name="req" class="com.android.Calculation" method="request">	
+		</action>
+		<action name="mode" class="com.android.Mode" method="retrieve">	
+		</action>
+		<action name="destin" class="com.android.Path" method="destination">	
+		</action>
+	</package>
+</struts>    
